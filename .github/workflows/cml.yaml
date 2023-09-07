@@ -24,7 +24,7 @@ jobs:
           echo " MODEL METRICS MESURE " > report.md
           cat metrics.txt >> report.md
 
-          echo "model viz" >>report.md
+          echo "model viz" >> report.md
           cml-publish feature_importance.png --md >> report.md
           cml-publish residuals.png --md >> report.md
           cml-send-comment report.md
