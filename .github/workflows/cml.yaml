@@ -24,4 +24,6 @@ jobs:
           echo " MODEL METRICS MESURE " 
           cat metrics.txt 
 
+          cml-publish residuals.png --md >> report.md
+
           
