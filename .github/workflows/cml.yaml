@@ -27,6 +27,6 @@ jobs:
           cml-publish residuals.png --md >> report.md
 
           env:
-            CML_GITHUB_TOKEN: ${{ secrets.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 }}
+            CML_GITHUB_TOKEN: ${{secrets.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}}
 
           
