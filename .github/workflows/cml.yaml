@@ -10,7 +10,7 @@ jobs:
       - name: Setup Node.js and Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.10'
+          python-version: '3.x'
 
       - name: Install Dependencies
         run: |
@@ -39,5 +39,6 @@ jobs:
           python train.py
           echo "MODEL METRICS MEASURE"
           cat metrics.txt
+          echo '![](./residuals.png "Confusion Matrix")' >> report.md
           cml-publish residuals.png --md >> report.md
         working-directory: ${{ github.workspace }}
