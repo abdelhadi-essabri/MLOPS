@@ -36,7 +36,7 @@ jobs:
         run: |
           # Utilisez le token dans votre script Python ou d'autres commandes
           python train.py
-          echo "MODEL METRICS MEASURE FIRST"
+          echo "MODEL METRICS MEASURE"
           cat metrics.txt
           cml-publish residuals.png --md >> report.md
         working-directory: ${{ github.workspace }}
