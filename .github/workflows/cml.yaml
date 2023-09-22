@@ -21,7 +21,7 @@ jobs:
           pip install -r requirements.txt
           python train.py
 
-          echo " MODEL METRICS MESURE " 
+          echo " MODEL METRICS MESURE FIRST " 
           cat metrics.txt 
 
           cml-publish residuals.png --md >> report.md
