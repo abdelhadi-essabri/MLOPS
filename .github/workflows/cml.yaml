@@ -28,7 +28,7 @@ jobs:
         working-directory: ${{ github.workspace }}
         
       - name: Install cml-publish
-        run: pip install cml-publish
+        run: pip install cml publish
         working-directory: ${{ github.workspace }}
 
 
