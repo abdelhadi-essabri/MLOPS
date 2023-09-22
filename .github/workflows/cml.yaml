@@ -28,9 +28,9 @@ jobs:
           MON_TOKEN_API: ${{ secrets.MON_TOKEN_API }}
         working-directory: ${{ github.workspace }}
         
-      - name: Install cml-publish
-        run: pip install cml publish
-        working-directory: ${{ github.workspace }}
+     # - name: Install cml-publish
+       # run: pip install cml publish
+       # working-directory: ${{ github.workspace }}
 
 
       - name: Train Model
@@ -39,5 +39,5 @@ jobs:
           python train.py
           echo "MODEL METRICS MEASURE"
           cat metrics.txt
-          cml-publish residuals.png --md >> report.md
+          cml publish residuals.png --md >> report.md
         working-directory: ${{ github.workspace }}
