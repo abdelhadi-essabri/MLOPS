@@ -1,0 +1,44 @@
+name: wine-model-quality
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js and Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+        working-directory: ${{ github.workspace }}
+
+      - name: Set up Token
+        run: |
+          # Retrieve the token from GitHub Secrets
+          MON_TOKEN_API=${{ secrets.MON_TOKEN_API }}
+          echo "Mon token API : $MON_TOKEN_API"
+          # Vous pouvez maintenant utiliser $MON_TOKEN_API dans votre script ou d'autres commandes
+        env:
+          MON_TOKEN_API: ${{ secrets.MON_TOKEN_API }}
+        working-directory: ${{ github.workspace }}
+        
+     # - name: Install cml-publish
+       # run: pip install cml publish
+       # working-directory: ${{ github.workspace }}
+
+
+      - name: Train Model
+        run: |
+          # Utilisez le token dans votre script Python ou d'autres commandes
+          python train.py
+          echo "MODEL METRICS MEASURE"
+          cat metrics.txt
+          echo '![](./residuals.png "Confusion Matrix")' >> report.md
+          #cml-publish residuals.png --md >> report.md
+        working-directory: ${{ github.workspace }}
