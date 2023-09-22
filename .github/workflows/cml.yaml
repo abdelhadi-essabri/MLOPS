@@ -26,6 +26,11 @@ jobs:
         env:
           MON_TOKEN_API: ${{ secrets.MON_TOKEN_API }}
         working-directory: ${{ github.workspace }}
+        
+      - name: Install cml-publish
+        run: pip install cml-publish
+        working-directory: ${{ github.workspace }}
+
 
       - name: Train Model
         run: |
