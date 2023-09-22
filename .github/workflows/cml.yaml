@@ -40,5 +40,5 @@ jobs:
           echo "MODEL METRICS MEASURE"
           cat metrics.txt
           echo '![](./residuals.png "Confusion Matrix")' >> report.md
-          cml-publish residuals.png --md >> report.md
+          #cml-publish residuals.png --md >> report.md
         working-directory: ${{ github.workspace }}
