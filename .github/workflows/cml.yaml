@@ -39,6 +39,6 @@ jobs:
           python train.py
           echo "MODEL METRICS MEASURE"
           cat metrics.txt
-          echo '![](./residuals.png "Confusion Matrix")' >> report.md
+          echo '![](./residuals.png "Confusion matrix")' >> report.md
           #cml-publish residuals.png --md >> report.md
         working-directory: ${{ github.workspace }}
