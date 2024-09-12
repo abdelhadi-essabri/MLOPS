@@ -37,7 +37,7 @@ jobs:
         run: |
           # Utilisez le token dans votre script Python ou d'autres commandes
           python train.py
-          echo "MODEL METRICS MEASURE"
+          echo "MODEL METRICS "
           cat metrics.txt
           echo '![](./residuals.png "Confusion Matrix")' >> report.md
           #cml-publish residuals.png --md >> report.md
