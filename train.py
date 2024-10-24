@@ -81,6 +81,7 @@ plt.ylim((2.5,8.5))
 plt.xlim((2.5,8.5))
 
 plt.tight_layout()
+os.makedirs("images", exist_ok=True)
 plt.savefig("images/residuals.png",dpi=120) 
 print("proccess finished !")
 
