@@ -42,3 +42,10 @@ jobs:
           echo '![](./residuals.png "Confusion Matrix")' >> report.md
           #cml-publish residuals.png --md >> report.md
         working-directory: ${{ github.workspace }}
+
+         # Nouvelle étape pour uploader les artefacts (les images)
+      - name: Upload Artifacts (Plots)
+        uses: actions/upload-artifact@v3
+        with:
+          name: model-plots
+          path: images/  # Dossier contenant vos images générées (résidus, importance des features)
